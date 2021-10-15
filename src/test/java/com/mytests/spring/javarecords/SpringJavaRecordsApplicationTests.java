@@ -1,7 +1,5 @@
 package com.mytests.spring.javarecords;
 
-import com.mytests.spring.javarecords.items.repos.ItemProjection;
-import com.mytests.spring.javarecords.items.repos.NewProjection;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
