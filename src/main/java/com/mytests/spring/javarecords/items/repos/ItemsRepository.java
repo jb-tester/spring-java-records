@@ -15,7 +15,7 @@ import java.util.List;
  */
 @RepositoryDefinition(domainClass = Item.class, idClass = Integer.class)
 public interface ItemsRepository {
-    @Query("select new com.mytests.spring.javarecords.items.repos.ItemProjection(item.title, item.cathegory, (item.price * (100 - item.discount) * item.total)) from Item item where item.cathegory= :cat")
+    @Query("select new com.mytests.spring.javarecords.items.repos.ItemProjection(item.title, item.cathegory, (item.price * ((100 - item.discount) /100) * item.total)) from Item item where item.cathegory= :cat")
     List<ItemProjection> getItemsByCategory(@Param("cat") String category);
 
     <T> T findProjectedById(Integer id, Class<T> projection);
