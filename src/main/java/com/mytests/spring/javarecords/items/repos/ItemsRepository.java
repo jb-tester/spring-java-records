@@ -19,4 +19,7 @@ public interface ItemsRepository {
     List<ItemProjection> getItemsByCategory(@Param("cat") String category);
 
     <T> T findProjectedById(Integer id, Class<T> projection);
+
+    @Query("select new com.mytests.spring.javarecords.items.repos.NewProjection(i, sum(i.price * i.total)) from Item i where i.cathegory=:cat")
+    List<NewProjection> testQuery(@Param("cat") String category);
 }
