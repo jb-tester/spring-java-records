@@ -2,8 +2,6 @@ package com.mytests.spring.javarecords;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Embeddable;
-
 /**
  * *
  * <p>Created by irina on 14.10.2021.</p>
