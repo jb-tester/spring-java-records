@@ -21,11 +21,15 @@ import java.util.List;
 @RestController
 public class ItemsController {
 
-    @Value("foo.bar.category")
+
     private String category ;
 
-    @Autowired
-    private ItemsRepository itemsRepository;
+    private final ItemsRepository itemsRepository;
+
+    public ItemsController(ItemsRepository itemsRepository,  @Value("${foo.bar.category}") String category) {
+        this.itemsRepository = itemsRepository;
+        this.category = category;
+    }
 
     @RequestMapping("/fruits")
     public List<ItemProjection> fruits() {
