@@ -17,12 +17,9 @@ import java.util.List;
  * *
  */
 @RestController
-public class ContactController {
+public record ContactController(ContactRepositoryNamesRecord recordRepository, ContactRepositoryNamesInterface interfaceRepository) {
 
-    @Autowired
-    private ContactRepositoryNamesRecord recordRepository;
-    @Autowired
-    private ContactRepositoryNamesInterface interfaceRepository;
+
 
     @RequestMapping("/projection_record")
     public List<NamesRecord> recordProjectionTest() {
