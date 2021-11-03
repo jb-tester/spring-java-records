@@ -12,7 +12,7 @@ import java.util.List;
  * <p>Project: spring-java-records</p>
  * *
  */
-public interface ItemsRepo extends CrudRepository<Item, Integer> {
+public interface ItemsRepoWithTextBlocks extends CrudRepository<Item, Integer> {
 
     @Query("""
            select i from Item i
