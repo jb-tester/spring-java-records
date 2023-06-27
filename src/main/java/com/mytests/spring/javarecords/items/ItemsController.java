@@ -1,10 +1,6 @@
 package com.mytests.spring.javarecords.items;
 
-import com.mytests.spring.javarecords.items.repos.ClassBasedItemProjection;
-import com.mytests.spring.javarecords.items.repos.ItemProjection;
-import com.mytests.spring.javarecords.items.repos.ItemsRepository;
-import com.mytests.spring.javarecords.items.repos.RecordBasedItemProjection;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.mytests.spring.javarecords.items.repos.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,6 +42,23 @@ public class ItemsController {
         List<String> rez = new ArrayList<>();
         for (ClassBasedItemProjection fruit : fruits) {
             rez.add(fruit.toString());
+        }
+        return rez;
+    }
+
+   @RequestMapping("/testLongsCasting")
+    public String testLongsCasting() {
+        String rez = " ";
+        for (ClassBasedLongsProjection p : itemsRepository.testCastsForLongs()) {
+            rez = rez + p + " ";
+        }
+        return rez;
+    }
+    @RequestMapping("/testShortsCasting2")
+    public String testShortsCasting2() {
+        String rez = " ";
+        for (ClassBasedShortProjection p : itemsRepository.testCastForShorts()) {
+            rez = rez + p + " ";
         }
         return rez;
     }

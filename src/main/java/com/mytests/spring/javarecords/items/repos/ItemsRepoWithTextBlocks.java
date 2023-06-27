@@ -22,6 +22,7 @@ public interface ItemsRepoWithTextBlocks extends CrudRepository<Item, Integer> {
            """)
     List<Item> findByMultipleCriteria(String cat, int price);
 
+    
     @Query("""
  select i from Item i
            """)
