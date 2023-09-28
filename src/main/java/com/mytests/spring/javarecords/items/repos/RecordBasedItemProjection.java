@@ -9,4 +9,6 @@ import com.mytests.spring.javarecords.items.model.Item;
  * *
  */
 public record RecordBasedItemProjection(Item item, Long totalsum) {
+    public RecordBasedItemProjection {
+    }
 }
